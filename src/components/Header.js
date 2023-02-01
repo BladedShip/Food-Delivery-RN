@@ -3,13 +3,13 @@ import { View, Text, StyleSheet, Dimensions } from "react-native";
 import { Colors, Parameters } from "../global/Styles";
 import { Icon } from "@rneui/themed";
 
-export default function Header({ title }) {
+export default function Header({ title, type }) {
     return (
         <View style={styles.header}>
-            <View style={{marginLeft:20}}>
+            <View style={{ marginLeft: 20 }}>
                 <Icon
                     type="material-community"
-                    name="arrow-left"
+                    name={type}
                     color={Colors.prim600}
                     size={28}
                     onPress={() => { }}
@@ -32,6 +32,6 @@ const styles = StyleSheet.create({
         color: Colors.prim600,
         fontSize: 22,
         fontWeight: "bold",
-        marginLeft:30,
+        marginLeft: 30,
     }
 })

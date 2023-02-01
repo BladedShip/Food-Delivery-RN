@@ -1,22 +1,22 @@
 import React from "react";
-import { View,Text,StyleSheet,StatusBar } from "react-native";
-import Header from "./src/components/Header";
+import { View, Text, StyleSheet, StatusBar } from "react-native";
 import { Colors } from "./src/global/Styles";
+import SignIn from "./src/screens/authScreens/SignInScreen";
 
-export default function App(){
-  return(
+export default function App() {
+  return (
     <View style={styles.container}>
       <StatusBar
         barStyle="light-content"
         backgroundColor={Colors.green600}
       />
-      <Header title="Hello"/>
+      <SignIn/>
     </View>
   )
 }
 
-const styles=StyleSheet.create({
-  container:{
-    flex:1
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
   }
 })
