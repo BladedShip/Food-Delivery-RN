@@ -38,7 +38,6 @@ export default function SignIn() {
                             name="lock"
                             iconStyle={{ color: Colors.text200 }}
                             type="material"
-                            style={{}}
                         />
                     </Animatable.View>
                     <TextInput
