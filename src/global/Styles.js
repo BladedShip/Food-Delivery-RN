@@ -5,6 +5,25 @@ export const GlobalStyles = StyleSheet.create({
         color:'#0EAD69',
         fontSize:20,
         fontWeight:'bold'
+    },
+    styledButton:{
+        backgroundColor:'#0EAD69',
+        alignContent:'center',
+        justifyContent:"center",
+        borderRadius:12,
+        borderWidth:1,
+        borderColor:'#CEEEE1',
+        height:50,
+        paddingHorizontal:20,
+        width:'100%',
+    },
+    titleButton:{
+        color:'white',
+        fontSize:20,
+        fontWeight:'bold',
+        alignItems:"center",
+        justifyContent:"center",
+        marginTop:-3,
     }
 })
 
