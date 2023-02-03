@@ -158,7 +158,6 @@ const styles = StyleSheet.create({
     createAccText: {
         color: Colors.green600,
         fontSize: 16,
-        // fontWeight:'bold',
         alignItems: "center",
         justifyContent: 'center',
         marginTop: -3
