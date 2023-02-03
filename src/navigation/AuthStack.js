@@ -8,13 +8,12 @@ const Auth = createNativeStackNavigator();
 
 export default function AuthStack() {
     return (
-        <Auth.Navigator>
+        <Auth.Navigator initialRouteName="Welcome">
             <Auth.Screen
                 name="Welcome"
                 component={Welcome}
                 options={{
                     headerShown: false,
-                    ...TransitionPresets.RevealFromBottomAndroid
                 }}
             />
 
@@ -23,7 +22,6 @@ export default function AuthStack() {
                 component={SignIn}
                 options={{
                     headerShown: false,
-                    ...TransitionPresets.RevealFromBottomAndroid
                 }}
             />
         </Auth.Navigator>
