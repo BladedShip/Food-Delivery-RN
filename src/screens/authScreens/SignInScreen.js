@@ -5,7 +5,7 @@ import { Icon, Button, SocialIcon } from "@rneui/themed";
 import Header from "../../components/Header";
 import * as Animatable from "react-native-animatable";
 
-export default function SignIn({navigation}) {
+export default function SignIn({ navigation }) {
 
     const [textInputFocus, setTextInputFocus] = useState(false);
 
@@ -14,7 +14,7 @@ export default function SignIn({navigation}) {
 
     return (
         <View style={styles.container}>
-            <Header title="Account Login" type="arrow-left" navigation={navigation}/>
+            <Header title="Account Login" type="arrow-left" navigation={navigation} />
 
             <View style={{ marginLeft: 20, marginTop: 10 }}>
                 <Text style={GlobalStyles.title}>Sign In</Text>

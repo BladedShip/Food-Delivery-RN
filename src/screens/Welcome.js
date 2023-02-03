@@ -5,9 +5,9 @@ import { Icon, Button, SocialIcon } from "@rneui/themed";
 import * as Animatable from "react-native-animatable";
 import Swiper from "react-native-swiper";
 
-export default function Welcome({navigation}) {
+export default function Welcome({ navigation }) {
     return (
-        
+
         <View style={{ flex: 1 }}>
 
             <View style={{ flex: 3, justifyContent: "flex-start", alignItems: "center", paddingTop: 20 }}>
@@ -48,19 +48,19 @@ export default function Welcome({navigation}) {
                 </Swiper>
             </View>
 
-            <View style={{ flex: 4,justifyContent:'flex-end',marginBottom:20 }}>
+            <View style={{ flex: 4, justifyContent: 'flex-end', marginBottom: 20 }}>
                 <View style={{ marginHorizontal: 20, marginTop: 30 }}>
                     <Button
                         title="Sign In"
                         buttonStyle={GlobalStyles.styledButton}
                         titleStyle={GlobalStyles.titleButton}
-                        onPress={()=>{
+                        onPress={() => {
                             navigation.navigate("SignIn");
                         }}
                     />
                 </View>
 
-                <View style={{ marginHorizontal: 20,marginTop:20 }}>
+                <View style={{ marginHorizontal: 20, marginTop: 20 }}>
                     <Button
                         title="Create an account"
                         buttonStyle={styles.createAcc}
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     createAccText: {
         color: Colors.green600,
         fontSize: 16,
-        fontWeight:'bold',
+        fontWeight: 'bold',
         alignItems: "center",
         justifyContent: 'center',
         marginTop: -3

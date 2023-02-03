@@ -11,7 +11,7 @@ export default function App() {
         barStyle="light-content"
         backgroundColor={Colors.green600}
       />
-      <RootNav/>
+      <RootNav />
     </View>
   )
 }
