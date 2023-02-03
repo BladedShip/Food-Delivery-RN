@@ -5,9 +5,9 @@ import { Icon, Button, SocialIcon } from "@rneui/themed";
 import * as Animatable from "react-native-animatable";
 import Swiper from "react-native-swiper";
 
-export default function Welcome() {
-
+export default function Welcome({navigation}) {
     return (
+        
         <View style={{ flex: 1 }}>
 
             <View style={{ flex: 3, justifyContent: "flex-start", alignItems: "center", paddingTop: 20 }}>
@@ -54,6 +54,9 @@ export default function Welcome() {
                         title="Sign In"
                         buttonStyle={GlobalStyles.styledButton}
                         titleStyle={GlobalStyles.titleButton}
+                        onPress={()=>{
+                            navigation.navigate("SignIn");
+                        }}
                     />
                 </View>
 

@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { createStackNavigator, TransitionPresets } from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { TransitionPresets } from "@react-navigation/stack";
 import Welcome from "../screens/Welcome";
 import SignIn from "../screens/authScreens/SignInScreen";
 
-const authStk = createStackNavigator();
+const Auth = createNativeStackNavigator();
 
 export default function AuthStack() {
     return (
-        <authStk.Navigator>
-            <authStk.Screen
+        <Auth.Navigator>
+            <Auth.Screen
                 name="Welcome"
                 component={Welcome}
                 options={{
@@ -17,14 +18,14 @@ export default function AuthStack() {
                 }}
             />
 
-            <authStk.Screen
-                name="Sign In"
+            <Auth.Screen
+                name="SignIn"
                 component={SignIn}
                 options={{
                     headerShown: false,
                     ...TransitionPresets.RevealFromBottomAndroid
                 }}
             />
-        </authStk.Navigator>
+        </Auth.Navigator>
     )
 }

@@ -1,8 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, StatusBar } from "react-native";
 import { Colors } from "./src/global/Styles";
-import SignIn from "./src/screens/authScreens/SignInScreen";
-import Welcome from "./src/screens/Welcome";
+import RootNav from "./src/navigation/RootNav";
 
 export default function App() {
   return (
@@ -11,7 +10,7 @@ export default function App() {
         barStyle="light-content"
         backgroundColor={Colors.green600}
       />
-      <Welcome/>
+      <RootNav/>
     </View>
   )
 }
