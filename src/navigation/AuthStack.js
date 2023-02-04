@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { TransitionPresets } from "@react-navigation/stack";
 import Welcome from "../screens/Welcome";
 import SignIn from "../screens/authScreens/SignInScreen";
+import HomeScreen from "../screens/HomeScreen";
 
 const Auth = createNativeStackNavigator();
 
@@ -20,6 +21,14 @@ export default function AuthStack() {
             <Auth.Screen
                 name="SignIn"
                 component={SignIn}
+                options={{
+                    headerShown: false,
+                }}
+            />
+
+            <Auth.Screen
+                name="HomeScreen"
+                component={HomeScreen}
                 options={{
                     headerShown: false,
                 }}

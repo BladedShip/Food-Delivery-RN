@@ -68,6 +68,9 @@ export default function SignIn({ navigation }) {
                     title="Sign In"
                     buttonStyle={GlobalStyles.styledButton}
                     titleStyle={GlobalStyles.titleButton}
+                    onPress={() => { 
+                        navigation.navigate("HomeScreen")
+                    }}
                 />
             </View>
             <View style={{ alignItems: 'center', marginTop: 16 }}>
