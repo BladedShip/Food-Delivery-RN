@@ -85,12 +85,13 @@ export default function HomeScreen() {
                 </View>
 
                 <View>
-                    <FlatList
+                    <FlashList
                         data={filterData}
                         showsHorizontalScrollIndicator={false}
                         keyExtractor={(item) => item.id}
                         extraData={indexChecked}
                         horizontal={true}
+                        estimatedItemSize={10}
                         renderItem={({ item, index }) => (
                             <Pressable
                                 onPress={() => setIndexChecked(item.id)}
