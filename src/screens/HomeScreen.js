@@ -1,13 +1,18 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Pressable, FlatList, Image } from "react-native";
 import { Colors, Parameters, GlobalStyles } from "../global/Styles";
 import { Icon } from "@rneui/base";
+import { FlashList } from "@shopify/flash-list";
+
 import HomeHeader from "../components/HomeHeader";
+import { filterData } from "../global/Data";
 
 export default function HomeScreen() {
+
     const [address, setAddress] = useState("Maleshwaram Area");
     const [delivery, setDelivery] = useState(true);
     const [time, setTime] = useState("Now");
+    const [indexChecked, setIndexChecked] = useState("0");
 
     return (
         <View style={styles.container}>
@@ -79,6 +84,33 @@ export default function HomeScreen() {
                     <Text style={GlobalStyles.headerText}>Categories</Text>
                 </View>
 
+                <View>
+                    <FlatList
+                        data={filterData}
+                        showsHorizontalScrollIndicator={false}
+                        keyExtractor={(item) => item.id}
+                        extraData={indexChecked}
+                        horizontal={true}
+                        renderItem={({ item, index }) => (
+                            <Pressable
+                                onPress={() => setIndexChecked(item.id)}
+                            >
+                                <View style={[styles.cardSmall, { backgroundColor: indexChecked === item.id ? Colors.green600 : Colors.prim600 }]}>
+                                    <Image
+                                        style={{ width: 60, height: 60, borderRadius: 30 }}
+                                        source={item.image}
+                                    />
+                                    <Text style={[styles.cardText, { color: indexChecked === item.id ? Colors.prim600 : Colors.text500, fontWeight: "bold" }]}>{item.name}</Text>
+                                </View>
+                            </Pressable>
+                        )}
+                    />
+                </View>
+
+                <View style={GlobalStyles.headerTextView}>
+                    <Text style={GlobalStyles.headerText}>Available Now!</Text>
+                </View>
+
             </ScrollView>
 
         </View>
@@ -126,6 +158,15 @@ const styles = StyleSheet.create({
         paddingVertical: 5,
         justifyContent: "space-between",
         paddingHorizontal: 20,
-        marginRight:26
-    }
+        marginRight: 26
+    },
+    cardSmall: {
+        borderRadius: 12,
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 5,
+        width: 80,
+        margin: 10,
+        height: 100,
+    },
 })

@@ -25,15 +25,16 @@ export const GlobalStyles = StyleSheet.create({
         justifyContent: "center",
         marginTop: -3,
     },
-    headerText:{
-        color:'#3C413C',
+    headerText: {
+        color: '#3C413C',
         fontSize: 24,
         fontWeight: 'bold',
         paddingLeft: 20,
     },
-    headerTextView:{
-        backgroundColor: '#E6E7E6',
-        paddingVertical:4
+    headerTextView: {
+        borderBottomColor: '#0EAD69',
+        borderBottomWidth: StyleSheet.hairlineWidth,
+        paddingVertical: 4
     }
 })
 
