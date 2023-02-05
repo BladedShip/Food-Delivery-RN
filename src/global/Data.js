@@ -29,7 +29,7 @@ export const filterData2 = [{ name: "Fast food", image: 'https://bukasapics.s3.u
 export const restaurantsData = [
     {
         restaurantName: "Mc Donalds", farAway: "21.2",
-        businessAddress: "22 Bessie street, Cape Town", images: 'https://bukasapics.s3.us-east-2.amazonaws.com/chicken.png',
+        businessAddress: "22 Bessie street, Cape Town", images: 'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         averageReview: 4.9, numberOfReview: 272, coordinates: { lat: -26.1888612, lng: 28.246325 }, discount: 10, deliveryTime: 15,
         collectTime: 5, foodType: "Burgers, Wraps,Milkshakes...",
         productData: [{ name: "Hand cut chips", price: 29.30, image: "https://bukasapics.s3.us-east-2.amazonaws.com/plate5.png" },
@@ -43,7 +43,7 @@ export const restaurantsData = [
 
     {
         restaurantName: "KFC", farAway: "12.7", businessAddress: "22 Bessie street, Cape Town",
-        images: 'https://bukasapics.s3.us-east-2.amazonaws.com/macdo.png',
+        images: 'https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         averageReview: 4.3, numberOfReview: 306, coordinates: { lat: -26.1891648, lng: 28.2441808 },
         discount: 20, deliveryTime: 30, collectTime: 10, foodType: "Chicken,Chicken wings... ",
         productData: [{ name: "Hand cut chips", price: 29.30, image: "https://bukasapics.s3.us-east-2.amazonaws.com/plate5.png" },
@@ -55,7 +55,7 @@ export const restaurantsData = [
 
     {
         restaurantName: "Steers", farAway: "5", businessAddress: " 17 Olivia Rd, Johannesburg",
-        images: 'https://bukasapics.s3.us-east-2.amazonaws.com/plate5.png',
+        images: 'https://images.pexels.com/photos/299351/pexels-photo-299351.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         coordinates: { lat: -26.1886781, lng: 28.244879 }, averageReview: 4.9, numberOfReview: 1272,
         discount: 12, deliveryTime: 25, collectTime: 15, foodType: "Flame grilled beef Burgers",
         productData: [{ name: "Hand cut chips", price: 29.30, image: "https://bukasapics.s3.us-east-2.amazonaws.com/plate5.png" },
@@ -69,7 +69,7 @@ export const restaurantsData = [
 
     {
         restaurantName: "Roman Pizza", farAway: "7", businessAddress: " 15 Atlas Rd, Kempton Park",
-        images: 'https://bukasapics.s3.us-east-2.amazonaws.com/pizza6.png',
+        images: 'https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         averageReview: 4.3, numberOfReview: 700, coordinates: { lat: -26.1845336, lng: 28.2481691 },
         discount: null, deliveryTime: 20, collectTime: 10, foodType: "Chicken pizza, Vegetarian pizza...",
         productData: [{ name: "Hand cut chips", price: 29.30, image: "https://bukasapics.s3.us-east-2.amazonaws.com/plate5.png" },

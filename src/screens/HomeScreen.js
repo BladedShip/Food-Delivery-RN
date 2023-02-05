@@ -1,11 +1,15 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Pressable, FlatList, Image } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Pressable, FlatList, Image, Dimensions } from "react-native";
 import { Colors, Parameters, GlobalStyles } from "../global/Styles";
 import { Icon } from "@rneui/base";
 import { FlashList } from "@shopify/flash-list";
+import CountDown from "react-native-countdown-component";
 
 import HomeHeader from "../components/HomeHeader";
-import { filterData } from "../global/Data";
+import { filterData, restaurantsData } from "../global/Data";
+import FoodCard from "../components/FoodCard";
+
+const SCREEN_WIDTH = Dimensions.get("window").width;
 
 export default function HomeScreen() {
 
@@ -110,6 +114,104 @@ export default function HomeScreen() {
 
                 <View style={GlobalStyles.headerTextView}>
                     <Text style={GlobalStyles.headerText}>Available Now!</Text>
+                </View>
+
+                <View>
+
+                    <FlatList
+                        style={{ marginTop: 10, marginBottom: 10 }}
+                        estimatedItemSize={20}
+                        data={restaurantsData}
+                        showsHorizontalScrollIndicator={false}
+                        keyExtractor={(item, index) => index.toString()}
+                        horizontal={true}
+                        renderItem={({ item }) => (
+                            <View>
+                                <FoodCard
+                                    onPressFoodCard
+                                    homemakerName={item.restaurantName}
+                                    deliveryAvailable
+                                    discountAvailable
+                                    discountPercent
+                                    reviewCount={item.numberOfReview}
+                                    businessAddress={item.businessAddress}
+                                    distance={item.farAway}
+                                    averageRating={item.averageReview}
+                                    images={item.images}
+                                    screenWidth={SCREEN_WIDTH * 0.8}
+                                />
+                            </View>
+                        )}
+                    />
+                </View>
+
+                <View style={GlobalStyles.headerTextView}>
+                    <Text style={GlobalStyles.headerText}>Offers Available</Text>
+                </View>
+
+                <View>
+                    <View style={{flexDirection:"row", alignItems:"center",marginTop:10}}>
+                        <Text style={{marginLeft:15,fontSize:16,marginTop:-10,marginRight:5}}>Refreshing in</Text>
+                        <CountDown
+                            until={3600}
+                            size={14}
+                            digitStyle={{backgroundColor:Colors.green500,}}
+                            digitTxtStyle={{color:Colors.prim600}}
+                            timeToShow={['M', 'S']}
+                            timeLabels={{m: 'Min', s: 'Sec'}}
+                        />
+                    </View>
+                    <FlatList
+                        style={{ marginTop: 10, marginBottom: 10 }}
+                        estimatedItemSize={20}
+                        data={restaurantsData}
+                        showsHorizontalScrollIndicator={false}
+                        keyExtractor={(item, index) => index.toString()}
+                        horizontal={true}
+                        renderItem={({ item }) => (
+                            <View>
+                                <FoodCard
+                                    onPressFoodCard
+                                    homemakerName={item.restaurantName}
+                                    deliveryAvailable
+                                    discountAvailable
+                                    discountPercent
+                                    reviewCount={item.numberOfReview}
+                                    businessAddress={item.businessAddress}
+                                    distance={item.farAway}
+                                    averageRating={item.averageReview}
+                                    images={item.images}
+                                    screenWidth={SCREEN_WIDTH * 0.8}
+                                />
+                            </View>
+                        )}
+                    />
+                </View>
+
+                <View style={GlobalStyles.headerTextView}>
+                    <Text style={GlobalStyles.headerText}>Near You</Text>
+                </View>
+
+                <View style={{ width: SCREEN_WIDTH, paddingTop: 10 }}>
+                    {
+                        restaurantsData.map((item, index) => (
+                            <View key={item.id} style={{ paddingBottom: 20 }}>
+                                <FoodCard
+                                    onPressFoodCard
+                                    homemakerName={item.restaurantName}
+                                    deliveryAvailable
+                                    discountAvailable
+                                    discountPercent
+                                    reviewCount={item.numberOfReview}
+                                    businessAddress={item.businessAddress}
+                                    distance={item.farAway}
+                                    averageRating={item.averageReview}
+                                    images={item.images}
+                                    screenWidth={SCREEN_WIDTH * 0.95}
+                                />
+                            </View>
+                        ))
+                    }
                 </View>
 
             </ScrollView>
