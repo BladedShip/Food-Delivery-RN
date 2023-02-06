@@ -11,7 +11,7 @@ import FoodCard from "../components/FoodCard";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
 
     const [address, setAddress] = useState("Maleshwaram Area");
     const [delivery, setDelivery] = useState(true);
@@ -37,7 +37,10 @@ export default function HomeScreen() {
                         </TouchableOpacity>
 
                         <TouchableOpacity
-                            onPress={() => setDelivery(false)}
+                            onPress={() => {
+                                //setDelivery(false);
+                                navigation.navigate("HomeMakerMap");
+                            }}
                         >
                             <View style={[{ backgroundColor: delivery ? Colors.prim600 : Colors.green600, }, styles.deliveryBtn]}>
                                 <Text style={[{ color: delivery ? Colors.green600 : Colors.prim600 }, styles.deliveryText]}>Pickup</Text>
@@ -150,15 +153,15 @@ export default function HomeScreen() {
                 </View>
 
                 <View>
-                    <View style={{flexDirection:"row", alignItems:"center",marginTop:10}}>
-                        <Text style={{marginLeft:15,fontSize:16,marginTop:-10,marginRight:5}}>Refreshing in</Text>
+                    <View style={{ flexDirection: "row", alignItems: "center", marginTop: 10 }}>
+                        <Text style={{ marginLeft: 15, fontSize: 16, marginTop: -10, marginRight: 5 }}>Refreshing in</Text>
                         <CountDown
                             until={3600}
                             size={14}
-                            digitStyle={{backgroundColor:Colors.green500,}}
-                            digitTxtStyle={{color:Colors.prim600}}
+                            digitStyle={{ backgroundColor: Colors.green500, }}
+                            digitTxtStyle={{ color: Colors.prim600 }}
                             timeToShow={['M', 'S']}
-                            timeLabels={{m: 'Min', s: 'Sec'}}
+                            timeLabels={{ m: 'Min', s: 'Sec' }}
                         />
                     </View>
                     <FlatList
@@ -215,7 +218,21 @@ export default function HomeScreen() {
                 </View>
 
             </ScrollView>
-
+            {delivery &&
+                <View style={styles.floatingButton}>
+                    <TouchableOpacity onPress={() => {
+                        navigation.navigate("HomeMakerMap")
+                    }}>
+                        <Icon
+                            name="place"
+                            type="material"
+                            color={Colors.green600}
+                            size={32}
+                        />
+                        <Text style={{ color: Colors.text500 }}>Map</Text>
+                    </TouchableOpacity>
+                </View>
+            }
         </View>
 
     )
@@ -271,5 +288,17 @@ const styles = StyleSheet.create({
         width: 80,
         margin: 10,
         height: 100,
+    },
+    floatingButton: {
+        position: 'absolute',
+        width: 60,
+        height: 60,
+        alignItems: 'center',
+        justifyContent: 'center',
+        right: 15,
+        bottom: 10,
+        backgroundColor: Colors.prim600,
+        borderRadius: 30,
+        elevation: 10,
     },
 })

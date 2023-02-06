@@ -69,7 +69,7 @@ export default function SignIn({ navigation }) {
                     buttonStyle={GlobalStyles.styledButton}
                     titleStyle={GlobalStyles.titleButton}
                     onPress={() => { 
-                        navigation.navigate("HomeScreen")
+                        navigation.navigate("ClientTabs")
                     }}
                 />
             </View>

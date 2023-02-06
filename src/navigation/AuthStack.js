@@ -3,7 +3,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { TransitionPresets } from "@react-navigation/stack";
 import Welcome from "../screens/Welcome";
 import SignIn from "../screens/authScreens/SignInScreen";
-import HomeScreen from "../screens/HomeScreen";
+import ClientTabs from "./ClientTabs";
+import HomeMakerMap from "../screens/HomeMakerMap";
 
 const Auth = createNativeStackNavigator();
 
@@ -27,8 +28,16 @@ export default function AuthStack() {
             />
 
             <Auth.Screen
-                name="HomeScreen"
-                component={HomeScreen}
+                name="ClientTabs"
+                component={ClientTabs}
+                options={{
+                    headerShown: false,
+                }}
+            />
+
+            <Auth.Screen
+                name="HomeMakerMap"
+                component={HomeMakerMap}
                 options={{
                     headerShown: false,
                 }}
